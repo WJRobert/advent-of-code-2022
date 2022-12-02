@@ -10,7 +10,7 @@ public class PuzzleSolverTest {
     void testSolvePuzzleOne() {
         PuzzleSolver puzzleSolver = new PuzzleSolver();
 
-        assertEquals(0, puzzleSolver.solvePuzzleOne("day02/puzzle_input.txt"));
+        assertEquals(10816, puzzleSolver.solvePuzzleOne("day02/puzzle_input.txt"));
     }
 
     @Test
