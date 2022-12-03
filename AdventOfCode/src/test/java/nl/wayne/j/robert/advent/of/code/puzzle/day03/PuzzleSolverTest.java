@@ -1,4 +1,4 @@
-package nl.wayne.j.robert.advent.of.code.puzzle.day02;
+package nl.wayne.j.robert.advent.of.code.puzzle.day03;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,13 +10,13 @@ public class PuzzleSolverTest {
     void testSolvePuzzleOne() {
         PuzzleSolver puzzleSolver = new PuzzleSolver();
 
-        assertEquals(10816, puzzleSolver.solvePuzzleOne("day02/puzzle_input.txt"));
+        assertEquals(7845, puzzleSolver.solvePuzzleOne("day03/puzzle_input.txt"));
     }
 
     @Test
     void testSolvePuzzleTwo() {
         PuzzleSolver puzzleSolver = new PuzzleSolver();
 
-        assertEquals(11657, puzzleSolver.solvePuzzleTwo("day02/puzzle_input.txt"));
+        assertEquals(2790, puzzleSolver.solvePuzzleTwo("day03/puzzle_input.txt"));
     }
 }
