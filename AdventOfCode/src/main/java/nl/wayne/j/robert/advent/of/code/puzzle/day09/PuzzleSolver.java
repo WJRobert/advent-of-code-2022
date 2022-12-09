@@ -2,7 +2,9 @@ package nl.wayne.j.robert.advent.of.code.puzzle.day09;
 
 import nl.wayne.j.robert.advent.of.code.util.FileReader;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class PuzzleSolver {
     private FileReader adventFileReader;
@@ -12,14 +14,14 @@ public class PuzzleSolver {
     }
 
     public int solvePuzzleOne(String inputFilePath) {
-        int[] tail = new int[] {0,0};
-        int[] head = new int[] {0,0};
+        int[] tail = new int[]{0, 0};
+        int[] head = new int[]{0, 0};
         Set<String> visitedPositions = new HashSet<>();
         List<String> inputLines = adventFileReader.readInput(inputFilePath);
-        for (String input: inputLines) {
+        for (String input : inputLines) {
             char movement = input.charAt(0);
             int moves = Integer.parseInt(input.substring(2));
-            while(moves >0) {
+            while (moves > 0) {
                 switch (movement) {
                     case 'R':
                         head[0] += 1;
@@ -85,73 +87,73 @@ public class PuzzleSolver {
     }
 
     public int solvePuzzleTwo(String inputFilePath) {
-        int[] knot1 = new int[] {0,0};
-        int[] knot2 = new int[] {0,0};
-        int[] knot3 = new int[] {0,0};
-        int[] knot4 = new int[] {0,0};
-        int[] knot5 = new int[] {0,0};
-        int[] knot6 = new int[] {0,0};
-        int[] knot7 = new int[] {0,0};
-        int[] knot8 = new int[] {0,0};
-        int[] knot9 = new int[] {0,0};
-        int[] head = new int[] {0,0};
+        int[] knot1 = new int[]{0, 0};
+        int[] knot2 = new int[]{0, 0};
+        int[] knot3 = new int[]{0, 0};
+        int[] knot4 = new int[]{0, 0};
+        int[] knot5 = new int[]{0, 0};
+        int[] knot6 = new int[]{0, 0};
+        int[] knot7 = new int[]{0, 0};
+        int[] knot8 = new int[]{0, 0};
+        int[] knot9 = new int[]{0, 0};
+        int[] head = new int[]{0, 0};
         Set<String> visitedPositions = new HashSet<>();
         List<String> inputLines = adventFileReader.readInput(inputFilePath);
-        for (String input: inputLines) {
+        for (String input : inputLines) {
             char movement = input.charAt(0);
             int moves = Integer.parseInt(input.substring(2));
-            while(moves >0) {
+            while (moves > 0) {
                 switch (movement) {
                     case 'R':
                         head[0] += 1;
-                        knot1 = calculateTailsNewPosition(head,knot1);
-                        knot2 = calculateTailsNewPosition(knot1,knot2);
-                        knot3 = calculateTailsNewPosition(knot2,knot3);
-                        knot4 = calculateTailsNewPosition(knot3,knot4);
-                        knot5 = calculateTailsNewPosition(knot4,knot5);
-                        knot6 = calculateTailsNewPosition(knot5,knot6);
-                        knot7 = calculateTailsNewPosition(knot6,knot7);
-                        knot8 = calculateTailsNewPosition(knot7,knot8);
-                        knot9 = calculateTailsNewPosition(knot8,knot9);
+                        knot1 = calculateTailsNewPosition(head, knot1);
+                        knot2 = calculateTailsNewPosition(knot1, knot2);
+                        knot3 = calculateTailsNewPosition(knot2, knot3);
+                        knot4 = calculateTailsNewPosition(knot3, knot4);
+                        knot5 = calculateTailsNewPosition(knot4, knot5);
+                        knot6 = calculateTailsNewPosition(knot5, knot6);
+                        knot7 = calculateTailsNewPosition(knot6, knot7);
+                        knot8 = calculateTailsNewPosition(knot7, knot8);
+                        knot9 = calculateTailsNewPosition(knot8, knot9);
                         visitedPositions.add(knot9[0] + "," + knot9[1]);
                         break;
                     case 'L':
                         head[0] -= 1;
-                        knot1 = calculateTailsNewPosition(head,knot1);
-                        knot2 = calculateTailsNewPosition(knot1,knot2);
-                        knot3 = calculateTailsNewPosition(knot2,knot3);
-                        knot4 = calculateTailsNewPosition(knot3,knot4);
-                        knot5 = calculateTailsNewPosition(knot4,knot5);
-                        knot6 = calculateTailsNewPosition(knot5,knot6);
-                        knot7 = calculateTailsNewPosition(knot6,knot7);
-                        knot8 = calculateTailsNewPosition(knot7,knot8);
-                        knot9 = calculateTailsNewPosition(knot8,knot9);
+                        knot1 = calculateTailsNewPosition(head, knot1);
+                        knot2 = calculateTailsNewPosition(knot1, knot2);
+                        knot3 = calculateTailsNewPosition(knot2, knot3);
+                        knot4 = calculateTailsNewPosition(knot3, knot4);
+                        knot5 = calculateTailsNewPosition(knot4, knot5);
+                        knot6 = calculateTailsNewPosition(knot5, knot6);
+                        knot7 = calculateTailsNewPosition(knot6, knot7);
+                        knot8 = calculateTailsNewPosition(knot7, knot8);
+                        knot9 = calculateTailsNewPosition(knot8, knot9);
                         visitedPositions.add(knot9[0] + "," + knot9[1]);
                         break;
                     case 'D':
                         head[1] -= 1;
-                        knot1 = calculateTailsNewPosition(head,knot1);
-                        knot2 = calculateTailsNewPosition(knot1,knot2);
-                        knot3 = calculateTailsNewPosition(knot2,knot3);
-                        knot4 = calculateTailsNewPosition(knot3,knot4);
-                        knot5 = calculateTailsNewPosition(knot4,knot5);
-                        knot6 = calculateTailsNewPosition(knot5,knot6);
-                        knot7 = calculateTailsNewPosition(knot6,knot7);
-                        knot8 = calculateTailsNewPosition(knot7,knot8);
-                        knot9 = calculateTailsNewPosition(knot8,knot9);
+                        knot1 = calculateTailsNewPosition(head, knot1);
+                        knot2 = calculateTailsNewPosition(knot1, knot2);
+                        knot3 = calculateTailsNewPosition(knot2, knot3);
+                        knot4 = calculateTailsNewPosition(knot3, knot4);
+                        knot5 = calculateTailsNewPosition(knot4, knot5);
+                        knot6 = calculateTailsNewPosition(knot5, knot6);
+                        knot7 = calculateTailsNewPosition(knot6, knot7);
+                        knot8 = calculateTailsNewPosition(knot7, knot8);
+                        knot9 = calculateTailsNewPosition(knot8, knot9);
                         visitedPositions.add(knot9[0] + "," + knot9[1]);
                         break;
                     case 'U':
                         head[1] += 1;
-                        knot1 = calculateTailsNewPosition(head,knot1);
-                        knot2 = calculateTailsNewPosition(knot1,knot2);
-                        knot3 = calculateTailsNewPosition(knot2,knot3);
-                        knot4 = calculateTailsNewPosition(knot3,knot4);
-                        knot5 = calculateTailsNewPosition(knot4,knot5);
-                        knot6 = calculateTailsNewPosition(knot5,knot6);
-                        knot7 = calculateTailsNewPosition(knot6,knot7);
-                        knot8 = calculateTailsNewPosition(knot7,knot8);
-                        knot9 = calculateTailsNewPosition(knot8,knot9);
+                        knot1 = calculateTailsNewPosition(head, knot1);
+                        knot2 = calculateTailsNewPosition(knot1, knot2);
+                        knot3 = calculateTailsNewPosition(knot2, knot3);
+                        knot4 = calculateTailsNewPosition(knot3, knot4);
+                        knot5 = calculateTailsNewPosition(knot4, knot5);
+                        knot6 = calculateTailsNewPosition(knot5, knot6);
+                        knot7 = calculateTailsNewPosition(knot6, knot7);
+                        knot8 = calculateTailsNewPosition(knot7, knot8);
+                        knot9 = calculateTailsNewPosition(knot8, knot9);
                         visitedPositions.add(knot9[0] + "," + knot9[1]);
                         break;
                 }

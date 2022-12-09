@@ -25,7 +25,7 @@ public class PuzzleSolver {
     }
 
     private Move getMove(String move) {
-        switch (move){
+        switch (move) {
             case "A":
             case "X":
                 return Move.ROCK;
@@ -40,7 +40,7 @@ public class PuzzleSolver {
     }
 
     private int calculateScore(Move opponent, Move yours) {
-        int score= yours.getPoints();
+        int score = yours.getPoints();
         if (opponent.equals(yours)) {
             score += 3;
         } else {

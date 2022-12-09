@@ -18,7 +18,7 @@ public class PuzzleSolver {
         List<String> inputLines = adventFileReader.readInput(inputFilePath);
         int totalCalories = 0;
         int mostCalories = 0;
-        for (String input: inputLines) {
+        for (String input : inputLines) {
             if (input == null || input.trim().isBlank()) {
                 if (mostCalories < totalCalories) {
                     mostCalories = totalCalories;
@@ -35,7 +35,7 @@ public class PuzzleSolver {
         List<String> inputLines = adventFileReader.readInput(inputFilePath);
         List<Integer> elfCalories = new ArrayList<>();
         int totalCalories = 0;
-        for (String input: inputLines) {
+        for (String input : inputLines) {
             if (input == null || input.trim().isBlank()) {
                 elfCalories.add(totalCalories);
                 totalCalories = 0;
