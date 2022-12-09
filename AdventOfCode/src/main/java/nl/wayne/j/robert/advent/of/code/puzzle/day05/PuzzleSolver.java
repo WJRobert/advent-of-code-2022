@@ -7,8 +7,6 @@ import java.util.Stack;
 
 public class PuzzleSolver {
     private final FileReader adventFileReader;
-    private Stack<String>[] stacks;
-
     private final String[][] crateInput = {
             {"R", "N", "P", "G"},
             {"T", "J", "B", "L", "C", "S", "V", "H"},
@@ -20,6 +18,7 @@ public class PuzzleSolver {
             {"W", "M", "H", "T", "D", "L", "F", "V"},
             {"L", "P", "B", "V", "M", "J", "F"}
     };
+    private Stack<String>[] stacks;
 
     public PuzzleSolver() {
         this.adventFileReader = new FileReader();

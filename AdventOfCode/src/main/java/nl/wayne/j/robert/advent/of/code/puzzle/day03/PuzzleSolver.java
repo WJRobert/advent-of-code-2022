@@ -21,8 +21,8 @@ public class PuzzleSolver {
         List<String> inputs = adventFileReader.readInput(inputFilePath);
         Map<Character, Integer> scoreCard = generateScoreCard();
         int sum = 0;
-        for (String backpack: inputs) {
-            int compartmentSize = backpack.length()/2;
+        for (String backpack : inputs) {
+            int compartmentSize = backpack.length() / 2;
             char commonItem = findCommonItem(backpack.substring(0, compartmentSize), backpack.substring(compartmentSize));
             sum += scoreCard.get(commonItem);
         }
@@ -32,7 +32,7 @@ public class PuzzleSolver {
     private Map<Character, Integer> generateScoreCard() {
         Map<Character, Integer> scoreCard = new HashMap<>();
         int count = 0;
-        for (char item: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray()) {
+        for (char item : "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray()) {
             count++;
             scoreCard.put(item, count);
         }
@@ -41,8 +41,8 @@ public class PuzzleSolver {
     }
 
     private char findCommonItem(String compartment1, String compartment2) {
-        for (char item1: compartment1.toCharArray()) {
-            for (char item2: compartment2.toCharArray()) {
+        for (char item1 : compartment1.toCharArray()) {
+            for (char item2 : compartment2.toCharArray()) {
                 if (item1 == item2) {
                     return item1;
                 }
@@ -56,8 +56,8 @@ public class PuzzleSolver {
         Map<Character, Integer> scoreCard = generateScoreCard();
         AtomicInteger sum = new AtomicInteger();
         elfGroups(inputs).forEach(group -> {
-                    char badge = getBatchForGroup(group);
-                    sum.addAndGet(scoreCard.get(badge));
+            char badge = getBatchForGroup(group);
+            sum.addAndGet(scoreCard.get(badge));
         });
 
         return sum.get();
@@ -71,10 +71,10 @@ public class PuzzleSolver {
     }
 
     private char getBatchForGroup(List<String> groupBags) {
-        for (char groupOneChar: groupBags.get(0).toCharArray()) {
-            for (char groupTwoChar: groupBags.get(1).toCharArray()) {
+        for (char groupOneChar : groupBags.get(0).toCharArray()) {
+            for (char groupTwoChar : groupBags.get(1).toCharArray()) {
                 if (groupOneChar == groupTwoChar) {
-                    for (char groupThreeChar: groupBags.get(2).toCharArray()) {
+                    for (char groupThreeChar : groupBags.get(2).toCharArray()) {
                         if (groupOneChar == groupThreeChar) {
                             return groupThreeChar;
                         }
